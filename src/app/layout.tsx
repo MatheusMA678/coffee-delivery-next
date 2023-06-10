@@ -1,3 +1,4 @@
+import { Header } from "@/components/Header";
 import "./globals.css";
 import { Baloo_2 as Baloo, Roboto_Flex as Roboto } from "next/font/google";
 
@@ -20,8 +21,9 @@ export default function RootLayout({
   return (
     <html lang="pt-br">
       <body
-        className={`${roboto.variable} ${baloo.variable} min-h-screen font-sans`}
+        className={`${roboto.variable} ${baloo.variable} min-h-screen bg-base-background font-sans`}
       >
+        <Header />
         {children}
       </body>
     </html>
