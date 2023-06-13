@@ -1,6 +1,7 @@
 import { Header } from "@/components/Header";
 import "./globals.css";
 import { Baloo_2 as Baloo, Roboto_Flex as Roboto } from "next/font/google";
+import { CoffeesContextProvider } from "@/contexts/CoffeesContext";
 
 const baloo = Baloo({ subsets: ["latin"], variable: "--baloo-font" });
 const roboto = Roboto({
@@ -23,8 +24,10 @@ export default function RootLayout({
       <body
         className={`${roboto.variable} ${baloo.variable} min-h-screen bg-base-background font-sans`}
       >
-        <Header />
-        {children}
+        <CoffeesContextProvider>
+          <Header />
+          {children}
+        </CoffeesContextProvider>
       </body>
     </html>
   );
